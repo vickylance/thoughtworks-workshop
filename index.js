@@ -34,10 +34,4 @@ const game = new Game(
 
 game.setRounds(15).play();
 
-console.group("GAME STATE");
-console.table(game.gameState());
-console.groupEnd();
-console.group("GAME Score");
-console.table(game.gameScore());
-console.groupEnd();
-console.log("WINNER: ", game.currentWinner);
+game.printMatchStats();
