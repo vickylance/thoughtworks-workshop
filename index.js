@@ -31,22 +31,26 @@ const Tournament = require("./Tournament");
 //   new GrudgeBot("The Grudger Bot (Chitti 2.0)")
 // );
 
+// // RUN the game rounds individually
 // const NUM_OF_ROUNDS = 5;
 // for (let i = 0; i < NUM_OF_ROUNDS; i++) {
 //   game.runRound();
 // }
 
+// // Or RUN the game using API
 // game.setRounds(15).play();
+
 // game.printMatchStats();
 
-const tournament = new Tournament([
-  new KindBot("KindBot"),
-  new GrudgeBot("GrudgeBot"),
-  new CopyCatBot("CopyCat"),
-  new EvilBot("EvilBot")
-]);
+// // CREATE AND RUN A TOURNAMENT
+// const tournament = new Tournament([
+//   new KindBot("KindBot"),
+//   new GrudgeBot("GrudgeBot"),
+//   new CopyCatBot("CopyCat"),
+//   new EvilBot("EvilBot")
+// ]);
 
-tournament
-  .runTournament()
-  .printMatchStats()
-  .computeOverallWinner();
+// tournament
+//   .runTournament()
+//   .printMatchStats()
+//   .computeOverallWinner();
