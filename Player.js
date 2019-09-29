@@ -8,7 +8,21 @@ function Player(name) {
   this.scores = [];
   this.choices = [];
   this.totalScore = 0;
+  this.game = null;
 }
+
+Player.prototype.addGame = function(game) {
+  this.game = game;
+};
+
+Player.prototype.getOpponent = function() {
+  if (!this.game) return;
+  if (this.game.p1 === this) {
+    return this.game.p2;
+  } else {
+    return this.game.p1;
+  }
+};
 
 Player.prototype.toString = function() {
   return this.name;

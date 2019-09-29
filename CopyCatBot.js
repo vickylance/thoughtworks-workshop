@@ -8,13 +8,9 @@ CopyCatBot.prototype.makeChoice = function() {
   let choice;
   if (this.choices.length > 0) {
     const lastScore = this.scores[this.scores.length - 1];
-    if (lastScore === -1) {
+    if (lastScore === -1 || lastScore === 0) {
       choice = Choice.Cheat;
-    } else if (lastScore === 3) {
-      choice = Choice.Cooperate;
-    } else if (lastScore === 0) {
-      choice = Choice.Cheat;
-    } else if (lastScore === 2) {
+    } else if (lastScore === 3 || lastScore === 2) {
       choice = Choice.Cooperate;
     }
   } else {

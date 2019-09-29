@@ -8,6 +8,8 @@ function Game(player1, player2, rounds = 0) {
   this.currentWinner = draw;
   this.rounds = rounds;
 
+  this.p1.addGame(this);
+  this.p2.addGame(this);
   Object.seal(this);
 }
 
