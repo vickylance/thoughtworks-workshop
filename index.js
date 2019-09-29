@@ -1,43 +1,56 @@
 const { Player } = require("./Player");
-const GoodBot = require("./GoodBot");
-const BadBot = require("./BadBot");
+const KindBot = require("./KindBot");
+const EvilBot = require("./EvilBot");
 const CopyCatBot = require("./CopyCatBot");
-const GrudgerBot = require("./GrudgerBot");
+const GrudgeBot = require("./GrudgeBot");
 const Game = require("./Game");
+const Tournament = require("./Tournament");
 
-// const game = new Game(new Player("Player1"), new Player("Player2"));
 // const game = new Game(
-//   new Player("Player1"),
-//   new GoodBot("The Good Bot (T.A.R.S)")
+//   new Player("Human Player 1"),
+//   new Player("Human Player 2")
 // );
 // const game = new Game(
-//   new BadBot("The Evil Bot (HAL9000)"),
+//   new Player("Player1"),
+//   new KindBot("The Good Bot (T.A.R.S)")
+// );
+// const game = new Game(
+//   new EvilBot("The Evil Bot (HAL9000)"),
 //   new Player("Player 2")
 // );
 // const game = new Game(
-//   new GoodBot("The Evil Bot (HAL9000)"),
-//   new BadBot("The Good Bot (T.A.R.S)")
+//   new KindBot("The Evil Bot (HAL9000)"),
+//   new EvilBot("The Good Bot (T.A.R.S)")
 // );
 // const game = new Game(
 //   new Player("Player1"),
 //   new CopyCatBot("The AI Overlord (Skynet)")
 // );
-const game = new Game(
-  new Player("Player1"),
-  new GrudgerBot("The Grudger Bot (Chitti 2.0)")
-);
+// const game = new Game(
+//   new Player("Player1"),
+//   new GrudgeBot("The Grudger Bot (Chitti 2.0)")
+// );
 
+// // RUN the game rounds individually
 // const NUM_OF_ROUNDS = 5;
 // for (let i = 0; i < NUM_OF_ROUNDS; i++) {
 //   game.runRound();
 // }
 
-game.setRounds(15).play();
+// // Or RUN the game using API
+// game.setRounds(15).play();
 
-console.group("GAME STATE");
-console.table(game.gameState());
-console.groupEnd();
-console.group("GAME Score");
-console.table(game.gameScore());
-console.groupEnd();
-console.log("WINNER: ", game.currentWinner);
+// game.printMatchStats();
+
+// // CREATE AND RUN A TOURNAMENT
+// const tournament = new Tournament([
+//   new KindBot("KindBot"),
+//   new GrudgeBot("GrudgeBot"),
+//   new CopyCatBot("CopyCat"),
+//   new EvilBot("EvilBot")
+// ]);
+
+// tournament
+//   .runTournament()
+//   .printMatchStats()
+//   .computeOverallWinner();

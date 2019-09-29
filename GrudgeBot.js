@@ -1,11 +1,11 @@
 const { Player, Choice } = require("./Player");
 
-function GrudgerBot(name) {
+function GrudgeBot(name) {
   Player.call(this, name);
   this.turnEvil = false;
 }
-GrudgerBot.prototype = Object.create(Player.prototype);
-GrudgerBot.prototype.makeChoice = function() {
+GrudgeBot.prototype = Object.create(Player.prototype);
+GrudgeBot.prototype.makeChoice = function() {
   let choice;
   if (!this.turnEvil) {
     const lastScore = this.scores[this.scores.length - 1];
@@ -23,4 +23,4 @@ GrudgerBot.prototype.makeChoice = function() {
   return choice;
 };
 
-module.exports = GrudgerBot;
+module.exports = GrudgeBot;

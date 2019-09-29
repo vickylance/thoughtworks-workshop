@@ -1,3 +1,4 @@
+const chalk = require("chalk");
 const Rules = require("./Rules");
 
 const draw = "NOBODY";
@@ -67,6 +68,23 @@ Game.prototype.computerWinner = function() {
   } else {
     this.currentWinner = draw;
   }
+};
+
+Game.prototype.printMatchStats = function() {
+  console.group(chalk.yellow("\n\nPLAYERS ON FIELD"));
+  console.log(
+    `PLAYER 1: ${chalk.blue(this.p1.name)} vs PLAYER 2: ${chalk.blue(
+      this.p2.name
+    )}`
+  );
+  console.groupEnd();
+  console.group(chalk.yellow("GAME STATE"));
+  console.table(this.gameState());
+  console.groupEnd();
+  console.group(chalk.yellow("GAME Score"));
+  console.table(this.gameScore());
+  console.groupEnd();
+  console.log(chalk.yellow("WINNER: "), this.currentWinner, "\n\n");
 };
 
 module.exports = Game;
