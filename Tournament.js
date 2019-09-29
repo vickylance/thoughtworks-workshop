@@ -1,9 +1,5 @@
 const chalk = require("chalk");
 const Game = require("./Game");
-const KindBot = require("./GoodBot");
-const GrudgeBot = require("./GrudgerBot");
-const CopyCatBot = require("./CopyCatBot");
-const EvilBot = require("./BadBot");
 
 function Tournament(players) {
   this.players = players;
@@ -55,14 +51,4 @@ Tournament.prototype.computeOverallWinner = function() {
   console.log("##################################");
 };
 
-const tournament = new Tournament([
-  new KindBot("KindBot"),
-  new GrudgeBot("GrudgeBot"),
-  new CopyCatBot("CopyCat"),
-  new EvilBot("EvilBot")
-]);
-
-tournament
-  .runTournament()
-  .printMatchStats()
-  .computeOverallWinner();
+module.exports = Tournament;

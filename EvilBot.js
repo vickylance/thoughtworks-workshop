@@ -1,13 +1,13 @@
 const { Player, Choice } = require("./Player");
 
-function BadBot(name) {
+function EvilBot(name) {
   Player.call(this, name);
 }
-BadBot.prototype = Object.create(Player.prototype);
-BadBot.prototype.makeChoice = function() {
+EvilBot.prototype = Object.create(Player.prototype);
+EvilBot.prototype.makeChoice = function() {
   const choice = Choice.Cheat;
   this.choices.push(choice);
   return choice;
 };
 
-module.exports = BadBot;
+module.exports = EvilBot;
