@@ -4,18 +4,21 @@ export enum Choice {
 }
 
 export default class Player {
-  private name: string;
-
-  constructor(name: string) {
-    this.name = name || "Guest Player";
+  private _name: string;
+  get name(): string {
+    return this._name;
   }
 
-  public makeChoice() {
+  constructor(name: string) {
+    this._name = name || "Guest Player";
+  }
+
+  public makeChoice(opponentLastChoice?: Choice | null) {
     const choice = Math.random() > 0.5 ? Choice.Cooperate : Choice.Cheat;
     return choice;
   }
 
   public toString() {
-    return `Player: ${this.name}`;
+    return `Player: ${this._name}`;
   }
 }

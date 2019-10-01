@@ -1,11 +1,21 @@
 import Player, { Choice } from "./player";
 
 export default class GrudgeBot extends Player {
-  constructor(name) {
+  private turnEvil: boolean;
+
+  constructor(name: string) {
     super(name);
+    this.turnEvil = false;
   }
 
-  public makeChoice() {
-    return Choice.Cheat;
+  public makeChoice(opponentLastChoice?: Choice | null) {
+    if (opponentLastChoice === Choice.Cheat) {
+      this.turnEvil = true;
+    }
+    if (this.turnEvil) {
+      return Choice.Cheat;
+    } else {
+      return Choice.Cooperate;
+    }
   }
 }

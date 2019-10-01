@@ -1,7 +1,7 @@
 import Player, { Choice } from "./player";
 
 export default class EvilBot extends Player {
-  constructor(name) {
+  constructor(name: string) {
     super(name);
   }
 
